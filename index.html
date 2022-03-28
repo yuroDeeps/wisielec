@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1 id="title">Wisielec</h1>
+
+        <div>
+        <img id="wisielec" src="img/wisielec.png">
+        </div>
+
+        <div id="textBox">
+        </div>
+
+        <div id="keyboard">
+        </div>
+    </div>
+    <script>
+        var word = window.prompt("Podaj słowo gry!").toUpperCase();
+        for (var i = 0; i < word.length; i++) {
+                document.getElementById("textBox").innerHTML += '_';
+        }
+
+        // vars for creating button
+        var btn;
+        var asChar;
+
+        //creating buttons for keyboard
+        for (var i = 65; i <= 90; i++) {
+            asChar = String.fromCharCode(i);
+
+            btn = document.createElement("button");
+            btn.id = i;
+            btn.innerText = asChar;  
+
+            //add letter to textBox        
+            btn.addEventListener("click", function(asChar) {
+                console.log("Es");
+            });
+
+            document.getElementById("keyboard").appendChild(btn);
+        }
+    </script>
+</body>
+</html>
